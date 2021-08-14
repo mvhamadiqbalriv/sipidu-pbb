@@ -151,7 +151,7 @@
                                     <td>
                                         <a href="{{route('jbp.edit',$item->id)}}?id={{$item->objek_pajak_id}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>
                                         <button onclick="deleteJbp({{$item->id}})" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
-                                        <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-file"></i> Export PDF</a>
+                                        <a href="{{route('jbp.create-pdf',$item->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-file"></i> Export PDF</a>
                                     </td>
                                 </tr>
                             @endforeach

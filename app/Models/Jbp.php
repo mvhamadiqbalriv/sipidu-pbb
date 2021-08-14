@@ -16,4 +16,8 @@ class Jbp extends Model
     public function fasilitas_bangunan(){
         return $this->belongsTo(Fasilitas_bangunan::class, 'fasilitas_bangunan_id', 'id');
     }
+
+    function objek_pajak(){
+        return $this->belongsTo(Objek_pajak::class, 'objek_pajak_id', 'id');
+    }
 }

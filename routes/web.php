@@ -38,8 +38,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('directory-fasilitas-bangunan-by-id', [App\Http\Controllers\DirectoryController::class, 'fasilitasBangunanById'])->name('directory-fasilitas-bangunan-by-id');
     Route::post('directory-jbp-by-id', [App\Http\Controllers\DirectoryController::class, 'jbpById'])->name('directory-jbp-by-id');
 
-    Route::get('jbp-pdf/{id}', [App\Http\Controllers\JbpController::class, 'pdf'])->name('jbp.jbp-pdf');
-    Route::post('jbp-create-pdf', [App\Http\Controllers\JbpController::class, 'createPdf'])->name('jbp.jbp-create-pdf');
+    Route::get('jbp-pdf/{id}', [App\Http\Controllers\JbpController::class, 'pdf'])->name('jbp.pdf');
+    Route::get('jbp-create-pdf/{id}', [App\Http\Controllers\JbpController::class, 'createPdf'])->name('jbp.create-pdf');
 
     Route::get('fasilitas-bangunan-pdf/{id}', [App\Http\Controllers\FasilitasBangunanController::class, 'pdf'])->name('fasilitas-bangunan.pdf');
     Route::get('fasilitas-bangunan.create-pdf/{id}', [App\Http\Controllers\FasilitasBangunanController::class, 'createPdf'])->name('fasilitas-bangunan.create-pdf');

@@ -294,9 +294,9 @@ class JbpController extends Controller
         }
     }
 
-    public function createPdf(Request $request)
+    public function createPdf($id)
     {
-        $data['list'] = null;
+        $data['detail'] = Jbp::findOrFail($id);
 
         $pdf = PDF::loadView('pdf.jbp', $data);
 
