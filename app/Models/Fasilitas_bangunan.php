@@ -12,4 +12,8 @@ class Fasilitas_bangunan extends Model
     protected $table = 'fasilitas_bangunan';
 
     protected $guarded = ['id'];
+
+    function objek_pajak(){
+        return $this->belongsTo(Objek_pajak::class, 'objek_pajak_id', 'id');
+    }
 }

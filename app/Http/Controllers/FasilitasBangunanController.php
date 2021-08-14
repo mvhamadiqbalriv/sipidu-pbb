@@ -6,7 +6,7 @@ use App\Models\Fasilitas_bangunan;
 use App\Models\Objek_pajak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Laravel\Ui\Presets\React;
+use PDF;
 
 class FasilitasBangunanController extends Controller
 {
@@ -512,5 +512,19 @@ class FasilitasBangunanController extends Controller
                 'status' => 'Error'
             ], 404);
         }
+    }
+
+    public function createPdf($id)
+    {
+        $data['detail'] = Fasilitas_bangunan::findOrFail($id);
+
+        $pdf = PDF::loadView('pdf.fasilitas_bangunan', $data);
+
+        return $pdf->download('fasilitas_bangunan_'.time().'.pdf');
+    }
+
+    public function pdf($id){
+        $data['detail'] = Fasilitas_bangunan::findOrFail($id);
+        return view('pdf.fasilitas_bangunan', $data);
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Jbp;
+use PDF;
 
 class JbpController extends Controller
 {
@@ -138,7 +139,6 @@ class JbpController extends Controller
             $totalArr['iii_basemen_total'],
             $fasilitas_bangunan->jumlah_fasilitas
         );
-
 
         $nilai_sebelum_disusutkan = array_sum($nilai_sebelum_disusutkan_arr);
 
@@ -292,5 +292,19 @@ class JbpController extends Controller
                 'status' => 'Error'
             ], 404);
         }
+    }
+
+    public function createPdf(Request $request)
+    {
+        $data['list'] = null;
+
+        $pdf = PDF::loadView('pdf.jbp', $data);
+
+        return $pdf->download('jbp_'.time().'.pdf');
+    }
+
+    public function pdf($id){
+        $data['detail'] = Jbp::findOrFail($id);
+        return view('pdf.jbp', $data);
     }
 }
