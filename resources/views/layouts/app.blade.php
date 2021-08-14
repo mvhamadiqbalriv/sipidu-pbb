@@ -122,18 +122,10 @@
                         </li>
 
                         <li class="has-submenu">
-                            <a href="#"><i class="icon-notebook"></i> Formulir <div class="arrow-down"></div></a>
-                            <ul class="submenu">
-                                <li><a href="{{url('form-jbp')}}">JBP</a></li>
-                                <li><a href="{{url('form-fasilitas-bangunan')}}">Faslitias Bangunan</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has-submenu">
                             <a href="#"><i class="icon-envelope"></i> Persuratan <div class="arrow-down"></div></a>
                             <ul class="submenu">
-                                <li><a href="surat-spop.html">Surat Pemberitahuan Objek Pajak (SPOP)</a></li>
-                                <li><a href="surat-lspop.html">Lampiran Surat Pemberitahuan Objek Pajak (LSPOP)</a></li>
+                                <li><a href="#">Surat Pemberitahuan Objek Pajak (SPOP)</a></li>
+                                <li><a href="#">Lampiran Surat Pemberitahuan Objek Pajak (LSPOP)</a></li>
                             </ul>
                         </li>
                         @endauth
