@@ -149,7 +149,7 @@
                                     <td><a href="javascript:void(0)" onclick="jbpModal({{$item->id}})">Rp. {{number_format($item->nilai_bangunan)}}</a></td>
                                     <td><a href="javascript:void(0)" onclick="fasilitasBangunanModal({{$item->fasilitas_bangunan_id}})">Rp. {{number_format($item->fasilitas_bangunan->jumlah_fasilitas)}}</a></td>
                                     <td>
-                                        <a href="{{route('jbp.edit',$item->id)}}?id={{$item->objek_pajak_id}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                                        <a href="{{route('jbp.edit',$item->id)}}?id={{$item->objek_pajak_id}}&fasilitas_bangunan_id={{$item->fasilitas_bangunan_id}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>
                                         <button onclick="deleteJbp({{$item->id}})" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                         <a href="{{route('jbp.create-pdf',$item->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-file"></i> Export PDF</a>
                                     </td>
