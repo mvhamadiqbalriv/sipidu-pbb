@@ -256,7 +256,7 @@ class JbpController extends Controller
         if (!empty($request->get('id')) && !empty($request->get('fasilitas_bangunan_id'))) {
             $data['detail'] = Jbp::findOrFail($id);
             $data['objek_pajak'] = Objek_pajak::findOrFail($request->id);
-            $data['fasilitas_bangunan'] = Fasilitas_bangunan::findOrFail($request->id);
+            $data['fasilitas_bangunan'] = Fasilitas_bangunan::findOrFail($request->fasilitas_bangunan_id);
         }else{
             return abort(404);die;
         }
