@@ -722,7 +722,11 @@
                             if (key == 'id' | key == 'objek_pajak_id' | key == 'creator_id' | key == 'updator_id'| key == 'created_at' | key == 'updated_at') {
                                 continue;
                             }
-                            $('#'+key).append(formatter.format(datasend[key]));
+                            if(key.includes('_harga') || key.includes('_total')){
+                                $('#'+key).html("Rp." + formatter.format(datasend[key]));
+                            }else{
+                                $('#'+key).html(formatter.format(datasend[key]));
+                            }
                         }
                         $('#fasilitasBangunanModal').modal('show');
                     }
@@ -780,7 +784,11 @@
                             if (key == 'id' | key == 'objek_pajak_id' | key == 'fasilitas_bangunan_id' | key == 'creator_id' | key == 'updator_id'| key == 'created_at' | key == 'updated_at') {
                                 continue;
                             }
-                            $('#'+key).append(formatter.format(datasend[key]));
+                            if(key.includes('_harga') || key.includes('_total')){
+                                $('#'+key).html("Rp." + formatter.format(datasend[key]));
+                            }else{
+                                $('#'+key).html(formatter.format(datasend[key]));
+                            }
                         }
                         $('#jbpModal').modal('show');
                     }
